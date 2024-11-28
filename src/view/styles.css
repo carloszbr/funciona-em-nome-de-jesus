@@ -1,0 +1,183 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a426f3;
+    color: #fffcfc;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    text-align: center;
+    display: grid; 
+    place-items: center;
+}
+
+.header .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Home Section */
+.home {
+    text-align: center;
+    padding: 50px;
+    background-color: #000000;
+}
+
+.home h1 {
+    font-size: 3em;
+}
+
+.home button {
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Seções de Formulários */
+section {
+    margin: 20px;
+}
+
+/* Login */
+.login form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login button {
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Cadastro */
+.cadastro form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #32054e;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align:center
+}
+
+.cadastro textarea {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+/* Lista de Filmes */
+.filmes {
+    padding: 50px;
+    background-color: #110b14;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.movie-card h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+.movie-card p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Classificação por Estrelas */
+.rating {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0 5px;
+}
+
+.star.selected {
+    color: #ff9900;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: #ffcc00;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1d1d1d;
+    color: white;
+}
+

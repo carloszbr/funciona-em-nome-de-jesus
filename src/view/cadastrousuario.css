@@ -1,0 +1,156 @@
+/* Estilos gerais para o body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #110b14; /* Fundo claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    align-items: center;
+    height: 100vh; /* Tela cheia */
+}
+
+/* Estilos para o header */
+header {
+    width: 100%;
+    background-color: #1d1d1d; /* Fundo escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo h3 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: formSlideIn 2s ease-out forwards;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav .buttonn a {
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav .buttonn button {
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .buttonn button:hover {
+    background-color: #8a2be2;
+    /* Roxo mais claro ao passar o mouse */
+    transform: scale(1.05);
+    /* Suaviza o botão com o efeito de zoom */
+}
+
+/* Estilos para a seção de cadastro */
+.cadastro form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: formSlideIn 1s ease-out forwards;
+    /* Animação de deslizamento para dentro */
+}
+.cadastro h2 {
+    color: #b959fd;
+    text-align:center;
+    font-size: 2,5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: formSlideIn 2s ease-out forwards;
+}
+
+.cadastro label {
+    color: #b959fd;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    display: block;
+    opacity: 0;
+    animation: fadeInLabel 3s ease-out forwards;
+}
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.cadastro input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #1d1d1d;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.cadastro input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.cadastro input[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Animação de entrada para o formulário */
+@keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para o footer (opcional, caso queira adicionar uma barra de rodapé) */
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

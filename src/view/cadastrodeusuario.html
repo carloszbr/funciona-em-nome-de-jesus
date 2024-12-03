@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário - CinemaFlix</title>
+    <link rel="stylesheet" href="cadastrousuario.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" id="CinemaFlix">
+                <h3>CinemaFlix</h3>
+            </a>
+        </div>
+        <nav class="nav">
+            <section class="buttonn" id="buttonn">
+                <a href="login.html">
+                    <button type="button">Login</button>
+                </a>
+                <a href="cadastro.html">
+                    <button type="button">Cadastrar Usuário</button>
+                </a>
+            </section>
+        </nav>
+    </header>
+
+    <!-- Seção de Cadastro de Usuário -->
+    <section class="cadastro" id="cadastro">
+        <h2>Cadastrar Usuário</h2>
+        <form id="formCadastro" action="#" method="POST" action="/api/user" onsubmit="return validarCadastro(event)">
+            <label for="usuario-nome">Nome:</label>
+            <input type="text" id="usuario-nome" name="nome" required>
+
+            <label for="usuario-email">E-mail:</label>
+            <input type="email" id="usuario-email" name="email" required>
+
+            <label for="usuario-senha">Senha:</label>
+            <input type="password" id="usuario-senha" name="senha" required>
+
+            <label for="usuario-confirmar-senha">Confirmar Senha:</label>
+            <input type="password" id="usuario-confirmar-senha" name="confirmar_senha" required>
+
+            <button type="submit">Cadastrar Usuário</button>
+        </form>
+    </section>
+
+    <script>
+        // Função para validar o formulário de cadastro
+        function validarCadastro(event) {
+            // Impede o envio do formulário até que as validações sejam feitas
+            event.preventDefault();
+
+            // Coletando os valores dos campos
+            const nome = document.getElementById('usuario-nome').value;
+            const email = document.getElementById('usuario-email').value;
+            const senha = document.getElementById('usuario-senha').value;
+            const confirmarSenha = document.getElementById('usuario-confirmar-senha').value;
+
+            // Validando se todos os campos foram preenchidos
+            if (!nome || !email || !senha || !confirmarSenha) {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            // Verificando se as senhas coincidem
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return false;
+            }
+
+            // Verificando o formato do e-mail
+            const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!regexEmail.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+
+            // Verificando a força da senha (pelo menos 6 caracteres)
+            if (senha.length < 6) {
+                alert("A senha deve ter pelo menos 6 caracteres.");
+                return false;
+            }
+
+            // Se tudo estiver certo, podemos enviar o formulário (ou fazer uma ação AJAX)
+            alert("Cadastro realizado com sucesso!");
+
+            // Aqui você pode enviar os dados para o backend (por exemplo, com AJAX)
+            // Por enquanto, vamos simular o envio com um simples alert.
+
+            // Se você quiser continuar com o envio do formulário:
+            // document.getElementById('formCadastro').submit();
+        }
+    </script>
+
+</body>
+</html>

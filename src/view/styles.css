@@ -1,0 +1,432 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Estilos gerais para o body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #110b14;
+    /* Cor de fundo suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.header .logo {
+    font-size: 2em;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    /* Animação de desvanecimento */
+}
+
+/* Animações de fade-in para elementos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal */
+h2 {
+    text-align: center;
+    color: #b959fd;
+    /* Roxo vibrante */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+    /* Animação de fade-in suave */
+}
+
+/* Estilo para o formulário de cadastro */
+.cadastro {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: formSlideIn 1s ease-out;
+    /* Animação de slide para dentro */
+}
+
+/* Animação de deslizamento para o formulário */
+@keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo dos labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #6a0dad;
+    /* Roxo claro */
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInLabel 0.5s ease-out forwards;
+}
+
+/* Animação de fade-in suave para os labels */
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para os campos de entrada (input e textarea) */
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    /* Transição suave ao focar */
+}
+
+/* Efeito de foco nos campos de entrada */
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: #6a0dad;
+    /* Roxo no foco */
+    outline: none;
+    box-shadow: 0 0 8px rgba(106, 13, 173, 0.5);
+    /* Sombras roxas */
+}
+
+/* Estilo do botão */
+button {
+    background-color: #6a0dad;
+    /* Cor roxa */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background-color: #8a2be2;
+    /* Roxo mais claro ao passar o mouse */
+    transform: scale(1.05);
+    /* Suaviza o botão com o efeito de zoom */
+}
+
+/* Responsividade: Ajustes para telas menores */
+@media (max-width: 768px) {
+    .cadastro {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+        /* Reduz o tamanho do título em telas pequenas */
+    }
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1d1d1d;
+    color: white;
+}
+
+/* Lista de Filmes */
+.filmes {
+    padding: 50px;
+    background-color: #110b14;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.movie-card h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+.movie-card p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Classificação por Estrelas */
+.rating {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0 5px;
+}
+
+.star.selected {
+    color: #ff9900;
+}
+
+.star:hover,
+.star:hover~.star {
+    color: #ffcc00;
+}
+
+
+/* Login */
+.login form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #050000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: formSlideIn 1s ease-out forwards;
+    /* Animação de deslizamento para dentro */
+}
+
+/* Animação de deslizamento para o formulário */
+@keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo dos labels */
+.login label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    opacity: 0;
+    animation: fadeInLabel 0.5s ease-out forwards;
+    /* Animação de fade-in para o label */
+}
+
+/* Animação de fade-in suave para os labels */
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para os campos de entrada */
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    opacity: 0;
+    animation: fadeInField 0.5s ease-out forwards;
+    /* Animação de fade-in para os campos */
+}
+
+/* Animação de fade-in suave para os campos de entrada */
+@keyframes fadeInField {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo do botão */
+.login button {
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeInButton 0.5s ease-out forwards;
+    /* Animação de fade-in para o botão */
+}
+
+/* Animação de fade-in suave para o botão */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Alinhamento dos botões dentro da section */
+.buttonn {
+    display: flex;
+    /* Usa o Flexbox */
+    justify-content: center;
+    /* Centraliza os botões horizontalmente */
+    gap: 20px;
+    /* Adiciona espaçamento entre os botões */
+    margin-top: 20px;
+    /* Adiciona um espaçamento superior, caso necessário */
+}
+
+/* Estilo dos botões */
+.buttonn button {
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Suaviza o hover */
+}
+
+/* Efeito de hover nos botões */
+.buttonn button:hover {
+    background-color: #8a2be2;
+    /* Cor do fundo quando o mouse passa por cima */
+    transform: scale(1.05);
+    /* Suaviza o botão com o efeito de zoom */
+}
+
+/* Estilo para a seção Home */
+.home {
+    text-align: center;
+    padding: 50px;
+    background-color: #110b14;
+    color: white;
+}
+
+/* Estilo para o título (h1) */
+.home h1 {
+    font-size: 4em;
+    /* Tamanho grande para chamar atenção */
+    font-family: 'Montserrat', sans-serif;
+    /* Fonte moderna e elegante */
+    font-weight: 800;
+    /* Deixa o texto mais pesado */
+    color: #b959fd;
+    /* Roxo vibrante para destacar */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    /* Aumenta o espaçamento entre as letras */
+    animation: fadeInTitle 1s ease-out;
+    /* Animação suave para o título */
+}
+
+/* Animação para o título */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para o parágrafo (p) */
+.home p {
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    color: #fffcfc;
+    /* Cor clara para o texto */
+    margin-top: 10px;
+    animation: fadeInText 1.5s ease-out;
+    /* Animação suave para o parágrafo */
+}
+
+/* Animação para o parágrafo */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
